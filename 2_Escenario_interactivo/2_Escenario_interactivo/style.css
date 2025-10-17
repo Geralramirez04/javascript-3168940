@@ -1,0 +1,56 @@
+*{
+  margin: 5;
+  padding: 4;
+  box-sizing: border-box;
+}
+
+.escenario {
+position: relative;
+width: 750px;
+height: 500px;
+margin: 20px auto;
+border: 2px solid #ccc;
+overflow: hidden;
+}
+.fondo {
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+object-fit: cover;
+}
+.asset {
+position: absolute;
+display: block;
+}
+.animable1 {
+top: 20px;
+left: 20px;
+
+}
+.animable2 {
+top: 20px;
+right: 20px;
+
+}
+@keyframes flotar {
+0%, 100% { transform: translateY(0); }
+50% { transform: translateY(-15px); }
+}
+@keyframes rotar {
+0% { transform: rotate(0deg); }
+100% { transform: rotate(360deg); }
+}
+.clickable {
+cursor: pointer;
+transition: transform .2s;
+}
+.clickable:hover {
+transform: scale(1.1);
+}
+.boton1 { bottom: 20px; left: 20px; }
+.boton2 { bottom: 20px; right: 20px; }
+.boton3 { bottom: 100px; left: 100px; }
+.boton4 { bottom: 100px; right: 100px; }
+
