@@ -7,25 +7,33 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
+<h1>Ayuda al hadita a recolectar los tulipanes</h1>
+
   <div class="escenario">
+    <img src="image/escenario.jpg" alt="Fondo" class="fondo">
 
-   <img src="image/escenario.jpg" alt="Fondo" class="fondo">
+    <aside class="Inventario" role="region" aria-label="Inventario de objetos">
+      <div class="Inventario__slots">
+        <div class="slot slot--tulipan" data-item="tulipan" aria-live="polite">
+          <img src="image/tulipan.png" alt="Tulipán" class="slot__img">
+          <span class="contador" aria-hidden="true">0</span>
+        </div>
+        <div class="slot slot--mariposa" data-item="mariposa" aria-live="polite">
+          <img src="image/mariposa.webp" alt="Mariposa" class="slot__img">
+          <span class="contador" aria-hidden="true">0</span>
+        </div>
+      </div>
+    </aside>
 
+    <img src="image/nube.webp" alt="Nube1" class="asset animable1" width="100" height="100" aria-hidden="true">
+    <img src="image/nube.webp" alt="Nube2" class="asset animable2" width="100" height="100" aria-hidden="true">
 
+    <img src="image/tulipan.png" alt="Tulipán 1" class="asset clickable boton1" data-item="tulipan" width="50" height="50">
+    <img src="image/mariposa.webp" alt="Mariposa" class="asset clickable boton2" data-item="mariposa" width="50" height="50">
+    <img src="image/tulipan.png" alt="Tulipán 2" class="asset clickable boton3" data-item="tulipan" width="50" height="50">
+    <img src="image/tulipan.png" alt="Tulipán 3" class="asset clickable boton4" data-item="tulipan" width="50" height="50">
+  </div>
 
-   <img src="image/nube.webp" alt="nube animable 1" class="asset animable1" width="100px" height="100px">
-   <img src="image/nube.webp" alt="nube animable 2" class="asset animable2" width="100px" height="100px">
-
-
-
-   <img src="image/tulipan.png" alt="Botón 1" class="asset clickable boton1" width="50px" height="50px">
-   <img src="image/mariposa.webp" alt="Botón 2" class="asset clickable boton2" width="50px" height="50px">
-   <img src="image/tulipan.png" alt="Botón 3" class="asset clickable boton3" width="50px" height="50px" >
-   <img src="image/tulipan.png" alt="Botón 4" class="asset clickable boton4" width="50px" height="50px">
-</div>
- 
-    
   <script src="./app.js"></script>
 </body>
 </html>

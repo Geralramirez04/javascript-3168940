@@ -3,7 +3,15 @@
   padding: 4;
   box-sizing: border-box;
 }
-
+body{
+  background-color: #eee1e1;
+  font-family: 'Courier New', Courier, monospace;
+}
+h1{
+  text-align: center;
+  font-size: 150%;
+  color: #694c28a4;
+}
 .escenario {
 position: relative;
 width: 750px;
@@ -16,8 +24,8 @@ overflow: hidden;
 position: absolute;
 top: 0;
 left: 0;
-width: 100%;
-height: 100%;
+width: 750px;
+height: 500px;
 object-fit: cover;
 }
 .asset {
@@ -25,22 +33,14 @@ position: absolute;
 display: block;
 }
 .animable1 {
-top: 20px;
-left: 20px;
-
+  top: 20px;
+  left: 20px;
+  animation: flotar 3.5s ease-in-out infinite alternate;
 }
 .animable2 {
-top: 20px;
-right: 20px;
-
-}
-@keyframes flotar {
-0%, 100% { transform: translateY(0); }
-50% { transform: translateY(-15px); }
-}
-@keyframes rotar {
-0% { transform: rotate(0deg); }
-100% { transform: rotate(360deg); }
+  top: 20px;
+  right: 20px;
+  animation: moverX 4.5s ease-in-out infinite alternate;
 }
 .clickable {
 cursor: pointer;
@@ -49,8 +49,90 @@ transition: transform .2s;
 .clickable:hover {
 transform: scale(1.1);
 }
-.boton1 { bottom: 20px; left: 20px; }
-.boton2 { bottom: 20px; right: 20px; }
-.boton3 { bottom: 100px; left: 100px; }
-.boton4 { bottom: 100px; right: 100px; }
+.boton1 { bottom: 280px; left: 40px; }
+.boton2 { bottom: 220px; left: 220px; }
+.boton3 { bottom: 280px; left: 400px; }
+.boton4 { bottom: 220px; left: 580px; }
 
+.Inventario{
+  position: absolute;
+  left: 50%;
+  top: 12px;
+  transform: translateX(-50%);
+  width: 150px;
+  height: 90px;
+  background: rgba(255,255,255,0.95);
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 8px;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+
+.Inventario__slots{
+  display: flex;
+  gap: 8px;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.slot{
+  position: relative;
+  width: 44px;
+  height: 44px;
+  background: #f4f4f4;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border: 1px solid #e0e0e0;
+}
+
+.slot__img{
+  width: 80%;
+  height: 80%;
+  object-fit: contain;
+  opacity: 0.25; 
+  transition: opacity .18s ease;
+}
+
+.slot.collected .slot__img{
+  opacity: 1;
+}
+
+.contador{
+  position: absolute;
+  bottom: -6px;
+  right: -6px;
+  background: #1d72b8;
+  color: #fff;
+  font-size: 12px;
+  padding: 2px 6px;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  display: inline-block;
+}
+
+.saltar {
+  
+  animation: salto 2s ease forwards;
+}
+@keyframes salto {
+  0%   { transform: translateY(0) opacity(1); }
+  30%  { transform: translateY(-40px) opacity(1.06); }
+  60%  { transform: translateY(60px)  opacity(0.98); }
+  100% { transform: translateY(0)  opacity(1); }
+}
+@keyframes moverX{
+  0%, 100% { transform: translateX(0); }
+  50%      { transform: translateX(-28px);}
+}
+
+@keyframes flotar{
+  0%, 100% { transform: translateY(0); }
+  50%     { transform: translateY(-18px); }
+}
