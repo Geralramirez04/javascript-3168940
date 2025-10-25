@@ -1,0 +1,387 @@
+*{
+  margin: 5;
+  padding: 4;
+  box-sizing: border-box;
+}
+body{
+  background-color: #eee1e1;
+  font-family: 'Courier New', Courier, monospace;
+}
+h1{
+  text-align: center;
+  font-size: 150%;
+  color: #694c28a4;
+}
+.escenario {
+position: relative;
+width: 750px;
+height: 500px;
+margin: 20px auto;
+border: 2px solid #e7cece;
+overflow: hidden;
+}
+.fondo {
+position: absolute;
+top: 0;
+left: 0;
+width: 750px;
+height: 500px;
+object-fit: cover;
+}
+.asset {
+position: absolute;
+display: block;
+}
+.animable1 {
+  top: 20px;
+  left: 20px;
+  animation: flotar 3.5s ease-in-out infinite alternate;
+}
+.animable2 {
+  top: 20px;
+  right: 20px;
+  animation: moverX 4.5s ease-in-out infinite alternate;
+}
+
+.clickable {
+    cursor: pointer;
+    transition: all 0.3s ease;
+    will-change: transform, opacity, filter;
+}
+
+.clickable:hover:not(.desaparecer):not([data-collected="true"]) {
+    transform: scale(1.1);
+    filter: brightness(1.2);
+}
+
+.boton1 { bottom: 280px; left: 40px; }
+.boton2 { bottom: 220px; left: 220px; }
+.boton3 { bottom: 280px; left: 400px; }
+.boton4 { bottom: 220px; left: 580px; }
+
+/* Estilos específicos para escenario de Marcianos */
+.escenario.marte .clickable {
+    filter: drop-shadow(0 4px 8px rgba(255, 0, 0, 0.2));
+}
+
+.escenario.marte .slot.activo {
+    background: rgba(255, 100, 100, 0.2);
+}
+
+/* Estilos específicos para escenario de Tulipanes */
+.escenario .slot--tulipan.activo {
+    background: rgba(255, 182, 193, 0.2);
+}
+
+.escenario .asset[data-item="tulipan"].saltar {
+    filter: saturate(1.5);
+}
+
+/* Estilos específicos para escenario de Hongos */
+.escenario.bosque .slot--hongo.activo {
+    background: rgba(139, 69, 19, 0.2);
+}
+
+.escenario.bosque .asset[data-item="hongo"].saltar {
+    filter: sepia(0.5);
+}
+
+.Inventario{
+  position: absolute;
+  left: 50%;
+  top: 12px;
+  transform: translateX(-50%);
+  width: 150px;
+  height: 90px;
+  background: rgba(247, 225, 218, 0.95);
+  border: 1px solid #ecd8d8;
+  border-radius: 8px;
+  padding: 8px;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  box-shadow: 9 6px 18px rgba(127, 124, 124, 0.08);
+}
+
+.Inventario__slots {
+    display: flex;
+    gap: 8px;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    perspective: 1000px;
+}
+
+.slot {
+    position: relative;
+    width: 44px;
+    height: 44px;
+    background: rgba(227, 196, 196, 0.9);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border: 1px solid #ddc9c9;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.slot:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.slot__img {
+    width: 80%;
+    height: 80%;
+    object-fit: contain;
+    opacity: 0.25;
+    transition: all 0.3s ease;
+    transform-style: preserve-3d;
+}
+
+.slot.collected .slot__img {
+    opacity: 1;
+    transform: rotateY(360deg);
+}
+
+.contador {
+    position: absolute;
+    bottom: -6px;
+    right: -6px;
+    background: linear-gradient(135deg, #1d72b8, #2196f3);
+    color: white;
+    font-size: 12px;
+    padding: 2px 6px;
+    border-radius: 12px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    transform-origin: center;
+    transition: all 0.3s ease;
+}
+
+.slot.activo .contador {
+    animation: contadorPulso 0.5s ease-out;
+}
+
+@keyframes contadorPulso {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.3); background: linear-gradient(135deg, #2196f3, #64b5f6); }
+    100% { transform: scale(1); }
+}
+
+.contador{
+  position: absolute;
+  bottom: -6px;
+  right: -6px;
+  background: #1d72b8;
+  color: #fff;
+  font-size: 12px;
+  padding: 2px 6px;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  display: inline-block;
+}
+
+.saltar {
+  
+  animation: salto 2s ease forwards;
+}
+@keyframes salto {
+  0%   { transform: translateY(0) opacity(1); }
+  30%  { transform: translateY(-40px) opacity(1.06); }
+  60%  { transform: translateY(60px)  opacity(0.98); }
+  100% { transform: translateY(0)  opacity(1); }
+}
+@keyframes moverX{
+  0%, 100% { transform: translateX(0); }
+  50%      { transform: translateX(-28px);}
+}
+
+@keyframes flotar{
+  0%, 100% { transform: translateY(0); }
+  50%     { transform: translateY(-18px); }
+}
+
+#caja {
+    border: solid;
+}
+
+#fondo  {
+    background-image: url(image/Escenario.jpg);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    margin: auto;
+    width: 750px;
+    height: 500px;
+    border: solid 3px rgb(238, 157, 130);
+}
+
+#fondo:hover {
+  cursor: url("bob.png") 20 20, auto;
+}
+
+#hongo1 {
+    position: absolute;
+    top: 130px;
+    left: 130px;
+    width: 0px;
+    height: auto;
+}
+
+@keyframes moverhongo {
+    0% {
+        transform: translateY(-20);
+    }
+    100% {
+        transform: translateY(20px);
+    }
+}
+
+
+#hongo2 {
+    position: absolute;
+    top: 380px;
+    left: 200px;
+    width: 40px;
+    height: auto;
+    transition: 0.5s;
+}
+
+@keyframes moverhongo_ {
+    0% {
+        transform: translateX(-20);
+    }
+    100% {
+        transform: translateX(20px);
+    }
+}
+
+#hongo3 {
+    position: absolute;
+    top: 230px;
+    left: 260px;
+    width: 40px;
+    height: auto;
+    transition: 0.5s;
+}
+#hongo4 {
+    position: absolute;
+    top: 380px;
+    left: 420px;
+    width: 40px;
+    height: auto;
+    transition: 0.5s;
+/}
+
+.desaparecer {
+  transform: scale(0); 
+  opacity: 0;          
+}
+
+#hongo1:hover,
+#hongo2:hover,
+#hongo3:hover,
+#hongo4:hover {
+    transform: scale(1.2);
+}
+
+
+
+@keyframes rotarSuave {
+    0% {
+        transform: rotate(-20deg);
+    }
+    100% {
+        transform: rotate(20deg);
+    }
+}
+
+#Estrella {
+    position: absolute;
+    top: 150px;
+    left: 200px;
+    width: 130px;
+    height: auto;
+}
+
+.moverEstrellaa{
+    animation: moverEstrella 4s linear infinite alternate;
+}
+
+@keyframes moverEstrella {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-40px);
+    }
+}
+
+#contador {
+  width: 130px;
+  margin: 15px auto;
+  padding: 10px;
+  background-color: rgba(158, 108, 87, 0.3);
+  border: 3px solid rgb(231, 136, 136);
+  border-radius: 10px;
+  text-align: center;
+  color: white;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 10px;
+}
+
+/* Efectos de interacción */
+.saltar {
+    animation: salto 0.6s cubic-bezier(0.36, 0, 0.66, -0.56) forwards;
+    transform-origin: center bottom;
+}
+
+@keyframes salto {
+    0% { transform: scale(1) translateY(0); }
+    30% { transform: scale(1.1) translateY(-40px); }
+    60% { transform: scale(0.9) translateY(20px); }
+    100% { transform: scale(1) translateY(0); }
+}
+
+/* Efecto de escala de grises */
+.grayscale {
+    filter: grayscale(100%);
+    opacity: 0.7;
+    transition: filter 0.3s ease, opacity 0.3s ease;
+}
+
+/* Efecto de desaparición */
+.desaparecer {
+    opacity: 0;
+    transform: scale(0.5);
+    transition: transform 0.4s ease-out, opacity 0.4s ease-out;
+    pointer-events: none;
+}
+
+.slot.activo {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+    transition: all 0.3s ease;
+}
+
+.slot.activo .contador {
+    animation: pulsar 0.5s ease-out;
+}
+
+@keyframes pulsar {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+
+.escenario .asset.clickable {
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.escenario .asset.clickable:hover:not(.desaparecer) {
+    transform: scale(1.1);
+}
