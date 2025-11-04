@@ -1,0 +1,27 @@
+{
+  "name": "galeria-escenarios",
+  "version": "1.0.0",
+  "description": "A gallery application showcasing various scenes with thumbnails and slides.",
+  "main": "src/app.js",
+  "scripts": {
+    "start": "live-server src",
+    "build": "webpack --mode production",
+    "test": "jest"
+  },
+  "keywords": [
+    "gallery",
+    "thumbnails",
+    "slides",
+    "javascript"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {
+    "live-server": "^1.2.1",
+    "webpack": "^5.64.4",
+    "webpack-cli": "^4.9.1"
+  },
+  "devDependencies": {
+    "jest": "^27.0.6"
+  }
+}
