@@ -1,0 +1,401 @@
+* {
+  margin: 10px;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+
+.p{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+    color: #0d0d0d;
+}
+
+
+
+h1{
+    color: #A48900;
+    text-align: center;
+}
+.h2 comic-title{
+    color: #A48900;
+    text-align: center;
+}
+h2{
+  color: #A48900;
+  text-align: center;
+}
+
+h3{
+    color: #CEB032;
+    text-align: center;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+ background-color: #F2EFE3;
+  color: #555555;
+  font-family: "Poppins";
+  line-height: 1.5;
+  overflow-x: hidden;
+}
+/*header*/
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(180deg, rgba(0,0,0,0.8), transparent);
+  padding: 1rem 2.5rem;
+  position: absolute;
+  width: 100%;
+  z-index: 10;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #A48900;
+  letter-spacing: 1px;
+}
+
+.menu {
+  background: #A48900;
+  color: #CEB032;
+  border: 1px solid #CEB032;
+  border-radius: 6px;
+  padding: 0.4rem 0.6rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+}
+
+.menu option {
+  background: #000;
+  color: #A48900;
+}
+
+.perfil {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: url("image/usuario (1).png") center/cover no-repeat;
+  border: 2px solid #A48900;
+}
+
+/* ==== section ==== */
+section {
+   background: url("image/capitulo1.jpg") center/cover no-repeat;
+  padding: 40px 40px;
+  position: relative;
+  z-index: 1;
+  
+}
+
+#menu desplegable {
+  height: 80vh;
+  display: flex;
+  align-items: flex-end;
+  padding-bottom: 4rem;
+  color: #fff;
+  position: relative;
+}
+
+#menu::before {
+
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.9) 40%, rgba(0, 0, 0, 0.2));
+  z-index: 0;
+}
+
+#inicio > div {
+  position: relative;
+  z-index: 1;
+  max-width: 40%;
+}
+
+#inicio h3 {
+  font-size: 2.2rem;
+  color: #ffb300;
+}
+
+#inicio .mini-desc {
+  color: #ccc;
+}
+
+/* ====  ==== */
+.temporadas {
+  background: #F2EFE3;
+  padding: 3rem 2rem;
+  border-top: 1px solid #222;
+}
+
+.temporadas .descripción {
+  max-width: 800px;
+  margin: 0 auto 2rem;
+  font-size: 1rem;
+  color: #bbb;
+  line-height: 1.6;
+}
+
+.tabs {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1.2rem;
+}
+
+.tab {
+  background: none;
+  border: none;
+  color: #888;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.tab.active,
+.tab:hover {
+  color: #A48900;
+}
+
+.rating {
+  text-align: center;
+  color: #A48900;
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+}
+
+/* ==== CAPÍTULOS ==== */
+.capitulo {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+  background: #d8d4c5;
+  border-radius: 10px;
+  margin: 0 auto 2rem;
+  max-width: 900px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.capitulo:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 20px rgba(105, 86, 42, 0.2);
+}
+
+.capitulo picture img {
+  width: 350px;
+  height: 350px;
+  display: block;
+  object-fit: cover;
+}
+
+.capitulo .info {
+  padding: 5px 10px;
+}
+
+.capitulo h3 {
+  font-size: 1.1rem;
+  color: #555555;
+  margin-bottom: 0.4rem;
+}
+
+.capitulo .mini-desc {
+  font-size: 0.9rem;
+  color: black;
+}
+
+.actions {
+  margin-top: 1rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.btn {
+  border: none;
+  border-radius: 5px;
+  padding: 0.7rem 1.3rem;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 0.9rem;
+  text-transform: capitalize;
+  transition: all 0.3s ease;
+}
+
+.btn.naranja {
+  background: #6a5f36;
+  color: #fff;
+}
+
+.btn.transparente {
+  background: transparent;
+  border: 1px solid #fff;
+  color: #fff;
+}
+
+.btn.transparente:hover {
+  background:#6a5f36;
+  color: #000;
+}
+
+/* ==== PERSONAJES ==== */
+.personajes {
+ background:#F2EFE3;
+  padding: 10px 10px ;
+  border-top: 1px solid #222;
+}
+
+.personajes h2 {
+  text-align: center;
+  font-size: 2rem;
+  color: #A48900;
+  margin-bottom: 2rem;
+}
+
+.personajes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  justify-content: center;
+}
+
+.personaje {
+  background: #d8d4c5;
+  border-radius: 10px;
+  overflow: hidden;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 400px;
+  height: 400px;
+  margin: auto;
+}
+
+.personaje:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(255, 179, 0, 0.3);
+}
+
+.personaje picture img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+
+.personaje-info {
+  padding: 1rem;
+}
+
+.personaje-info h3 {
+  color: #7d7040;
+  margin-bottom: 0.5rem;
+}
+
+.personaje-info .mini-desc {
+  color: black;
+  font-size: 0.9rem;
+}
+
+/* ==== MODAL ==== */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.8);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal[aria-hidden="false"] {
+  display: flex;
+}
+
+.modal-content {
+  background: #111;
+  padding: 1rem;
+  border-radius: 10px;
+  max-width: 800px;
+  width: 90%;
+  position: relative;
+}
+
+#closeModal {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background: none;
+  border: none;
+  color: #ffb300;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* ==== FOOTER ==== */
+.site-footer {
+  background:#ede4c3;
+  padding: 2rem;
+  text-align: center;
+  color: #aaa;
+  border-top: 1px solid #222;
+}
+
+.site-footer form {
+  margin-bottom: 1rem;
+}
+
+#newsletter input {
+  padding: 0.5rem;
+  border: 1px solid #ffb300;
+  background: #000;
+  color: #fff;
+  border-radius: 5px;
+  margin-right: 0.5rem;
+}
+
+#newsletter button {
+  background: #7d7040;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.socials {
+  margin: 1rem 0;
+}
+
+.socials a {
+  color: #A48900;
+  margin: 0 0.5rem;
+  text-decoration: none;
+}
+
+.socials a:hover {
+  text-decoration: underline;
+}
+
+small {
+  display: block;
+  color: #555;
+  margin-top: 0.5rem;
+}
+
+@media (max-width: 799px){
+  .site-footer{flex-direction: column; align-items: flex-start;}
+  .site-footer input[type="email"]{min-width: auto; width:100%;}
+  .menu{padding:0.4rem 0.5rem}
+}
+@media (max-width: 480px){
+  .site-header{padding:0.7rem}
+  .logo{font-size:1rem}
+  section{padding:0.8rem 0.8rem}
+}
