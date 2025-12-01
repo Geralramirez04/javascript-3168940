@@ -1,0 +1,132 @@
+import { comic } from "./bd"
+
+const params = new URLSearchParams(window.location.search)
+const id = parseInt ( params.get(id))
+
+//comparar id del url con id de la base de datos
+const miPersonaje = comic.Personajes.find( p => p.id === id )
+
+
+//console.log("El id del personaje es", miPersonaje)
+const contenidoPersonaje = document.querySelector(".contenido-personaje")
+
+console.log(contenidoPersonaje)
+contenidoPersonaje.innerHTML = `
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Personaje: Helena - La Princesa Ronca de Oro</title>
+  <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css"> 
+  <link rel="stylesheet" href="Personaje.css"> 
+</head>
+<body>
+
+  <header class="header">
+    <div class="brand">
+     <img src="image/logo helenia.png" alt="Helenia" class="logo" width="100" />
+    </div>
+
+<nav class="header__nav">
+    <a href="index.html" class="nav__item">Inicio</a>
+    <a href="Capitulo.html" class="nav__item">Capítulos</a>
+    <a href="index.html#scroller-personajes" class="nav__item active">Personajes</a> 
+    </nav>
+
+  
+  </header>
+
+  <main>
+    
+    <div class="personaje-perfil">
+      <div class="personaje-imagen">
+        <img src="image/helena (1).png" alt="Helena">
+      </div>
+      <div class="personaje-info">
+        <h1>Helena</h1>
+        <p>
+            Princesa de voz poderosa que desafía las reglas para cantar libremente. 
+            Su medallón simboliza su fuerza y legado eterno.
+        </p>
+        
+        <button class="btn btn--primary" onclick="window.location.href='capitulo1.html'">Ver Cómic</button>
+      </div>
+    </div>
+
+       
+   <div class="personaje-perfil" class="contenido-personaje">
+      <div class="personaje-imagen">
+        <img src="image/conde (2).png" alt="conde">
+      </div>
+      <div class="personaje-info">
+        <h1>Conde</h1>
+        <p>
+            Noble apasionado por la música que descubre el talento de Helena y la impulsa a brillar en los grandes escenarios.
+        </p>
+      
+        <button class="btn btn--primary" onclick="window.location.href='capitulo1.html'">Ver Cómic</button>
+      </div>
+    </div>
+
+
+       
+   <div class="personaje-perfil" class="contenido-personaje">
+      <div class="personaje-imagen">
+        <img src="image/trovador .png" alt="trovador">
+      </div>
+      <div class="personaje-info">
+        <h1>Trovador</h1>
+        <p>
+           "Músico carismático que enamora y traiciona a Helena, encendiendo el fuego que convierte su voz en leyenda.
+        </p>
+      
+        <button class="btn btn--primary" onclick="window.location.href='capitulo1.html'">Ver Cómic</button>
+      </div>
+    </div>
+  </main>
+
+     <div id="trailerModal" class="modal" role="dialog" aria-hidden="true" aria-modal="true">
+  <div class="modal-content">
+    <button id="closeModal" aria-label="Cerrar modal">×</button>
+    <div id="trailerContainer"></div>
+  </div>
+ </div>
+
+
+ <footer class="site-footer" role="contentinfo">
+  <form id="newsletter" aria-label="Suscribirse al newsletter">
+    <label for="email" style="color: #A48900;">Suscríbete</label>
+    <input id="email" type="email" placeholder="tu@email.com" required>
+    <button type="submit">Enviar</button>
+  </form>
+
+   <div class="socials">
+     <a href="#" aria-label="Compartir en X">X</a>
+     <a href="#" aria-label="Compartir en Facebook">Facebook</a>
+     <a href="#" aria-label="Compartir en Youtube">Youtube</a>
+   </div>
+
+      <div class="footer__right">
+        <small>Autores: Juan, Caleb y Geraldine</small>
+      </div>
+
+   <div class="footer__left">
+        <strong>La Princesa Ronca de Oro</strong> · 2025 · Drama musical
+      </div>
+ </footer>
+
+
+</main>
+
+
+<script type="module" src="./Personaje.js"></script>
+
+
+</body>
+</html>
+
+</body>
+</htm>
+`

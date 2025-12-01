@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>La Princesa Ronca de Oro</title>
+  <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<main>
+  <header class="header">
+    <div class="brand">
+      <img src="image/logo helenia.png" alt="Helenia" class="logo" width="100" />
+    </div>
+
+ <nav class="header__nav">
+  <a href="#hero-container" class="nav__item active">Inicio</a>
+  <a href="Capitulo.html" class="nav__item">Capítulos</a>
+  <a href="Personaje.html" class="nav__item">Personajes</a>
+</nav>
+   
+  </header>
+
+
+    <section class="hero" id="hero-container" aria-labelledby="titulo-comic">
+        </section>
+
+    <section class="panel">
+      <div class="panel__header">
+        <h2>Capítulos</h2>
+      </div>
+      <div class="scroller" id="scroller-capitulos">
+        </div>
+    </section>
+
+    <section class="panel">
+      <div class="panel__header">
+        <h2>Personajes</h2>
+      </div>
+      <div class="scroller" id="scroller-personajes">
+        </div>
+    </section>
+
+  </main>
+
+    <!-- FOOTER -->
+      <div id="trailerModal" class="modal" role="dialog" aria-hidden="true" aria-modal="true">
+  <div class="modal-content">
+    <button id="closeModal" aria-label="Cerrar modal">×</button>
+    <div id="trailerContainer"></div>
+  </div>
+ </div>
+
+
+ <footer class="site-footer" role="contentinfo">
+  <form id="newsletter" aria-label="Suscribirse al newsletter">
+    <label for="email" style="color: #A48900;">Suscríbete</label>
+    <input id="email" type="email" placeholder="tu@email.com" required>
+    <button type="submit">Enviar</button>
+  </form>
+
+   <div class="socials">
+     <a href="#" aria-label="Compartir en X">X</a>
+     <a href="#" aria-label="Compartir en Facebook">Facebook</a>
+     <a href="#" aria-label="Compartir en Youtube">Youtube</a>
+   </div>
+
+      <div class="footer__right">
+        <small>Autores: Juan, Caleb y Geraldine</small>
+      </div>
+
+   <div class="footer__left">
+        <strong>La Princesa Ronca de Oro</strong> · 2025 · Drama musical
+      </div>
+ </footer>
+
+
+</main>
+
+    
+
+<script type="module" src="./app.js"></script>
+</body>
+</html>
