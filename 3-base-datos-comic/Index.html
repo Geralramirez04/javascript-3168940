@@ -1,0 +1,87 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La princesa de oro</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <header class="header" role="banner">
+    <div class="brand">
+      <a href="Index.html" aria-label="Ir al inicio">
+        <img src="image/logo.png" alt="Helenia" class="logo" width="100" />
+      </a>
+    </div>
+
+    <button id="nav-toggle" class="nav-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Abrir menú">
+      <span aria-hidden="true">☰</span>
+    </button>
+
+    <nav id="primary-nav" class="header__nav" role="navigation" aria-label="Menú principal">
+      <ul class="nav__list">
+        <li><a href="#hero-container" class="nav__item active" data-nav="inicio">Inicio</a></li>
+        <li><a href="#capitulos" class="nav__item" data-nav="capitulos">Capítulos</a></li>
+        <li><a href="#personajes" class="nav__item" data-nav="personajes">Personajes</a></li>
+     
+      </ul>
+    </nav>
+
+    <div class="user-actions">
+      <a href="#" class="btn btn--link">Iniciar sesión</a>
+      <a href="#" class="btn btn--primary">Crear cuenta</a>
+    </div>
+  </header>
+
+  <!-- HERO (rellenado desde bd.js) -->
+  <section id="hero-container" class="hero" role="region" aria-label="Banner principal">
+    <!-- contenido dinámico -->
+  </section>
+
+  <!-- CAPÍTULOS -->
+  <section id="capitulos" class="capitulos" aria-labelledby="caps-title">
+  <div class="section-header">
+    <h2 id="caps-title">Capítulos</h2>
+
+   <div id="scroller-capitulos" class="cap-grid" role="list" aria-live="polite"></div>
+
+   <div id="cap-empty" class="cap-empty" hidden>No hay capítulos disponibles.</div>
+</section>
+
+  <!-- PERSONAJES -->
+  <section id="personajes" class="personajes" aria-labelledby="chars-title">
+    <div class="section-header">
+      <h2 id="chars-title">Personajes</h2>
+    </div>
+    <div id="scroller-personajes" class="cards-row" role="list"></div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer" id="footer">
+    <div class="footer__left"><strong id="comic-title">La Princesa de Oro</strong> · <span id="comic-year">2025</span></div>
+    <div class="footer__right">
+      <small id="comic-authors">Autores</small>
+      <a class="back-to-top" href="#hero-container" aria-label="Volver arriba">↑ Volver arriba</a>
+    </div>
+  </footer>
+  
+  <script type="module" src="./app.js"></script>
+    
+
+
+   <script src="./bd.js"></script>
+   <script src="app.js"></script>
+    
+</body>
+</html>
